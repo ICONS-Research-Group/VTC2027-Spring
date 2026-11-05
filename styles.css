@@ -3043,3 +3043,48 @@ main > .hero {
     .hero .conference-info { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; max-width: 1000px; gap: 16px; }
     .hero .info-card { width: auto; min-width: 0; padding: 24px 18px; }
 }
+
+/* Hamburg waterfront and submission actions */
+main > .hero {
+    background: linear-gradient(180deg, rgba(10,24,44,.53), rgba(8,22,40,.76)),
+        url("images/hamburg-wasserschloss.jpg") center 53% / cover;
+}
+.hero .hero-content > h1 { color: white; -webkit-text-fill-color: white; }
+.photo-credit { font-size: .8rem; margin-top: .55rem; }
+.photo-credit a { color: inherit; }
+.submission-info .trackchair { background: #1851ad; margin: .4rem 1.1rem .4rem 0; }
+.cfp-download { display: inline-block; color: #204e91; font-weight: 600; text-underline-offset: .22em; }
+
+/* Topic groups follow the reading width of the scope text. */
+#scope .topics-grid {
+    width: 100%; max-width: 1000px; grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 0 2.5rem; margin: 2rem auto 0; text-align: left;
+}
+#scope .topic-card {
+    background: transparent; border: 0; border-top: 2px solid #406789;
+    border-radius: 0; padding: 1.25rem 0 1.5rem; box-shadow: none;
+    animation: none; opacity: 1; transform: none;
+}
+#scope .topic-card::before { display: none; }
+#scope .topic-header { text-align: left; margin: 0 0 .85rem; }
+#scope .topic-card h3 {
+    text-align: left; font-size: 1.17rem; color: #16324d; -webkit-text-fill-color: currentColor;
+    background: none; margin: 0; line-height: 1.35;
+}
+#scope .topic-content li { text-align: left; line-height: 1.55; font-size: .97rem; padding-left: 1rem; margin: .45rem 0; transform: none; }
+#scope .topic-content .bullet { color: #527691; top: 0; }
+@media (max-width: 700px) { #scope .topics-grid { grid-template-columns: 1fr; } }
+
+/* Equal-width profiles; flex centering balances an incomplete final row. */
+@media (min-width: 901px) {
+    #organizers .organizer-cards {
+        display: flex; flex-flow: row wrap; justify-content: center;
+        gap: 20px; width: 100%; max-width: 1120px; margin-inline: auto;
+    }
+    #organizers .organizer-card {
+        flex: 0 0 calc((100% - 60px) / 4); min-width: 0; max-width: none;
+        margin: 0; padding: 20px 12px; box-sizing: border-box;
+    }
+    #organizers .profile-image { width: clamp(92px, 11vw, 144px); height: auto; aspect-ratio: 1; margin-bottom: 14px; }
+    #organizers .profile-info { overflow-wrap: anywhere; }
+}
